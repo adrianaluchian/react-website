@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
     entry: './src/index.js',
     output: {
-        path: path.join([__dirname, '/dist']),
+        path: path.resolve(__dirname, '/dist'),
         publicPath: '/',
         filename: 'bundle.js'
     },
@@ -15,7 +15,14 @@ module.exports = {
             test: /\.(js|jsx)$/,
             exclude: /node_modules/,
             use: ['babel-loader', 'eslint-loader']
+        },
+        {
+            test: /\.less$/,
+            use: ['style-loader', 'css-loader', 'less-loader']
         }]
     },
-    devtool: 'inline-source-map'
+    devtool: 'inline-source-map',
+    resolve: {
+        extensions: ['.js', '.jsx', '.less']
+    }
 };

@@ -1,10 +1,6 @@
+import { App } from "./app";
 import React from "react";
 import ReactDOM from "react-dom";
+import "./main.less";
 
-class Welcome extends React.Component {
-    render () {
-        return <h1>Hello World from React boilerplate</h1>;
-    }
-}
-
-ReactDOM.render(<Welcome />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
