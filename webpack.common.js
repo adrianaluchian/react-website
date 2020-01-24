@@ -4,18 +4,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: './src/index.js',
     output: {
-        filename: '[name].bundle.js',
+        filename: 'bundle.js',
         path: path.join(__dirname, 'public')
     },
     module: {
         rules: [{
-            test: /\.(js|jsx)$/,
-            exclude: /node_modules/,
-            use: ['babel-loader', 'eslint-loader']
-        },
-        {
-            test: /\.less$/,
-            use: ['style-loader', 'css-loader', 'less-loader']
+            oneOf: [{
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: ['babel-loader', 'eslint-loader']
+            },
+            {
+                test: /\.less$/,
+                use: ['style-loader', 'css-loader', 'less-loader']
+            }]
         }]
     },
     resolve: {
