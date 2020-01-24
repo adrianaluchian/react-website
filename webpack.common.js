@@ -4,12 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: './src/index.js',
     output: {
-        path: path.join(__dirname, '/dist'),
-        publicPath: '/',
-        filename: 'bundle.js'
-    },
-    devServer: {
-        contentBase: './dist'
+        filename: '[name].bundle.js',
+        path: path.join(__dirname, 'public')
     },
     module: {
         rules: [{
@@ -22,7 +18,6 @@ module.exports = {
             use: ['style-loader', 'css-loader', 'less-loader']
         }]
     },
-    devtool: 'inline-source-map',
     resolve: {
         extensions: ['.js', '.jsx', '.less']
     },
