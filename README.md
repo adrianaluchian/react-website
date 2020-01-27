@@ -1,5 +1,5 @@
 # react-config
-Basic React app configuration
+Basic React website configuration.
 
 ## NPM scripts
 

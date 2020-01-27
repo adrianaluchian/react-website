@@ -1,4 +1,4 @@
 module.exports = {
-    verbose: true,
-    rootDir: 'src'
+  verbose: true,
+  rootDir: 'src'
 };
